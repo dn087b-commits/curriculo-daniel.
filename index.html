@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos Daniel Bermúdez Lora - Hoja de Vida Interactiva</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #0f172a;
+      --accent-color: #2563eb;
+      --bg-light: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #334155;
+      --text-muted: #64748b;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-main);
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(15, 23, 42, 0.95) !important;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 100px 0 60px;
+      border-bottom: 4px solid var(--accent-color);
+    }
+
+    .hero-badge {
+      background-color: rgba(37, 99, 235, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(96, 165, 250, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Glass Cards */
+    .custom-card {
+      background: var(--card-bg);
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .custom-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Tech Badges Interactive Filter */
+    .tech-tag {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .tech-tag:hover {
+      transform: scale(1.05);
+    }
+
+    /* Interactive Timeline */
+    .timeline {
+      position: relative;
+      border-left: 3px solid var(--accent-color);
+      padding-left: 24px;
+      margin-left: 10px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent-color);
+      border: 3px solid white;
+    }
+
+    /* Progress bars */
+    .progress {
+      height: 10px;
+      border-radius: 8px;
+    }
+
+    /* Quick Contact Floating Button */
+    .float-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">CDBL<span class="text-primary">.dev</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#perfil">Perfil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#educacion">Educación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="hero-section text-center text-md-start">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <span class="hero-badge mb-3 d-inline-block">
+            <i class="bi bi-code-slash me-1"></i> Aprendiz SENA | ADSO
+          </span>
+          <h1 class="display-4 fw-bold mb-2">Carlos Daniel Bermúdez Lora</h1>
+          <h3 class="h4 text-primary-light mb-4 text-light-50">Desarrollador de Software Junior</h3>
+          <p class="lead mb-4 text-slate-300">
+            Especializado en lógica de programación, arquitectura de bases de datos relacionales y construcción de aplicaciones web.
+          </p>
+          <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start">
+            <a href="tel:+573005583107" class="btn btn-outline-light rounded-pill">
+              <i class="bi bi-telephone-fill me-1"></i> 300 558 3107
+            </a>
+            <a href="mailto:dn087b@gmail.com" class="btn btn-outline-light rounded-pill">
+              <i class="bi bi-envelope-fill me-1"></i> dn087b@gmail.com
+            </a>
+            <a href="https://github.com/dn087b-commits" target="_blank" class="btn btn-primary rounded-pill">
+              <i class="bi bi-github me-1"></i> GitHub
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 text-center mt-4 mt-md-0">
+          <div class="p-4 rounded-circle bg-primary d-inline-block bg-opacity-10 border border-primary border-opacity-25">
+            <i class="bi bi-terminal-box display-1 text-primary"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+
+    <!-- Perfil Profesional -->
+    <section id="perfil" class="mb-5">
+      <div class="custom-card p-4">
+        <h2 class="h4 fw-bold text-dark mb-3">
+          <i class="bi bi-person-badge text-primary me-2"></i>Perfil Profesional
+        </h2>
+        <p class="mb-0 text-secondary leading-relaxed">
+          Desarrollador de software en formación con base técnica y tecnológica en el <strong>SENA</strong>. Experiencia práctica en la construcción de sistemas web funcionales (<strong>HTML5, CSS3, PHP, Python</strong>) y en el análisis, modelado de bases de datos relacionales y documentación técnica de requerimientos. Orientado a la lógica de programación, estructuración de datos y desarrollo de código limpio para desempeñarme con éxito en etapa productiva, prácticas o roles de desarrollador junior.
+        </p>
+      </div>
+    </section>
+
+    <!-- Proyectos Destacados (Interactive Filterable Cards) -->
+    <section id="proyectos" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="h4 fw-bold m-0"><i class="bi bi-folder-symlink text-primary me-2"></i>Proyectos Destacados</h2>
+        <!-- Interactive Category Filter -->
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-outline-primary active" onclick="filterProjects('all')">Todos</button>
+          <button type="button" class="btn btn-outline-primary" onclick="filterProjects('web')">Web / PHP</button>
+          <button type="button" class="btn btn-outline-primary" onclick="filterProjects('db')">Bases de Datos</button>
+          <button type="button" class="btn btn-outline-primary" onclick="filterProjects('logic')">Lógica</button>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Proyecto 1 -->
+        <div class="col-md-4 project-card" data-category="web">
+          <div class="custom-card h-100 p-4 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-primary-subtle text-primary fw-semibold">Web App</span>
+              <small class="text-muted">2024 - 2025</small>
+            </div>
+            <h3 class="h5 fw-bold">Sistema de Gestión Bibliotecaria</h3>
+            <p class="text-secondary small flex-grow-1">
+              Desarrollo en equipo de software para administrar inventarios de libros, préstamos, usuarios y devoluciones en tiempo real.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark border">PHP</span>
+              <span class="badge bg-light text-dark border">Python</span>
+              <span class="badge bg-light text-dark border">HTML/CSS</span>
+            </div>
+            <a href="https://github.com/dn087b-commits" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+              <i class="bi bi-code-square me-1"></i> Ver Código
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="col-md-4 project-card" data-category="db">
+          <div class="custom-card h-100 p-4 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-success-subtle text-success fw-semibold">Modelado E/R</span>
+              <small class="text-muted">2026 - Presente</small>
+            </div>
+            <h3 class="h5 fw-bold">Mundo Patitas (Veterinaria)</h3>
+            <p class="text-secondary small flex-grow-1">
+              Diseño integral de arquitectura de información con modelo relacional de 20 tablas, historias clínicas, roles de usuario y prototipos.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark border">SQL</span>
+              <span class="badge bg-light text-dark border">MySQL Workbench</span>
+              <span class="badge bg-light text-dark border">UML</span>
+            </div>
+            <a href="https://github.com/dn087b-commits" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+              <i class="bi bi-file-earmark-text me-1"></i> Documentación
+            </a>
+          </div>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="col-md-4 project-card" data-category="logic">
+          <div class="custom-card h-100 p-4 d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <span class="badge bg-warning-subtle text-warning-emphasis fw-semibold">Algoritmos</span>
+              <small class="text-muted">2024 - 2026</small>
+            </div>
+            <h3 class="h5 fw-bold">Banco de Lógica de Programación</h3>
+            <p class="text-secondary small flex-grow-1">
+              Simulaciones interactivas en PSeInt: cajero automático, clasificadores de datos, menús complejos y validaciones financieras.
+            </p>
+            <div class="mb-3">
+              <span class="badge bg-light text-dark border">PSeInt</span>
+              <span class="badge bg-light text-dark border">Pseudocódigo</span>
+            </div>
+            <a href="https://github.com/dn087b-commits" target="_blank" class="btn btn-sm btn-outline-primary w-100">
+              <i class="bi bi-terminal me-1"></i> Ver Repositorio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Habilidades Técnicas -->
+    <section id="habilidades" class="mb-5">
+      <h2 class="h4 fw-bold mb-4"><i class="bi bi-cpu text-primary me-2"></i>Habilidades Técnicas</h2>
+      <div class="row g-4">
+        
+        <div class="col-md-6">
+          <div class="custom-card p-4 h-100">
+            <h3 class="h6 fw-bold text-uppercase text-muted mb-3">Lenguajes & Frontend</h3>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">HTML5 / CSS3</span>
+                <span class="text-muted small">Intermedio</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-primary" style="width: 80%"></div></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">PHP</span>
+                <span class="text-muted small">Practicante</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-primary" style="width: 65%"></div></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">Python</span>
+                <span class="text-muted small">Básico / Académico</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-primary" style="width: 60%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="custom-card p-4 h-100">
+            <h3 class="h6 fw-bold text-uppercase text-muted mb-3">Bases de Datos & Análisis</h3>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">Modelado E/R & MySQL</span>
+                <span class="text-muted small">Avanzado Académico</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-success" style="width: 85%"></div></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">Ingeniería de Requisitos</span>
+                <span class="text-muted small">Intermedio</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-success" style="width: 75%"></div></div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span class="fw-semibold">Git & VS Code</span>
+                <span class="text-muted small">Comandos Básicos</span>
+              </div>
+              <div class="progress"><div class="progress-bar bg-success" style="width: 70%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Educación (Timeline) -->
+    <section id="educacion" class="mb-5">
+      <h2 class="h4 fw-bold mb-4"><i class="bi bi-journal-bookmark text-primary me-2"></i>Formación Académica</h2>
+      <div class="custom-card p-4">
+        <div class="timeline">
+          
+          <div class="timeline-item">
+            <h3 class="h5 fw-bold mb-1">Tecnólogo en Análisis y Desarrollo de Software (ADSO)</h3>
+            <p class="text-primary fw-semibold mb-1">Servicio Nacional de Aprendizaje (SENA)</p>
+            <p class="text-muted small mb-2"><i class="bi bi-calendar3 me-1"></i>2026 - Presente | Finalización estimada: Julio 2028</p>
+            <p class="text-secondary small">
+              Formación integral en arquitectura de software, gestión de bases de datos relacionales, prototipado y metodologías de desarrollo.
+            </p>
+          </div>
+
+          <div class="timeline-item mb-0">
+            <h3 class="h5 fw-bold mb-1">Técnico en Análisis y Desarrollo de Software</h3>
+            <p class="text-primary fw-semibold mb-1">SENA — I. E. Manuel José Sierra (Girardota)</p>
+            <p class="text-muted small mb-2"><i class="bi bi-calendar3 me-1"></i>2024 - 2025</p>
+            <p class="text-secondary small">
+              Articulación con la media técnica enfocada en pensamiento algorítmico, lógica de programación y proyectos funcionales.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Contact Footer -->
+  <footer id="contacto" class="bg-dark text-white py-5 mt-5">
+    <div class="container text-center">
+      <h2 class="h3 fw-bold mb-3">¿Interesado en mi perfil para etapa práctica?</h2>
+      <p class="text-muted mb-4">Estoy disponible para oportunidades de práctica o puestos junior en desarrollo de software.</p>
+      
+      <div class="d-flex justify-content-center gap-3 mb-4">
+        <a href="mailto:dn087b@gmail.com" class="btn btn-primary rounded-circle p-3"><i class="bi bi-envelope-fill lead"></i></a>
+        <a href="tel:+573005583107" class="btn btn-success rounded-circle p-3"><i class="bi bi-whatsapp lead"></i></a>
+        <a href="https://github.com/dn087b-commits" target="_blank" class="btn btn-secondary rounded-circle p-3"><i class="bi bi-github lead"></i></a>
+      </div>
+
+      <small class="text-muted">&copy; 2026 Carlos Daniel Bermúdez Lora. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom Filter Script -->
+  <script>
+    function filterProjects(category) {
+      // Update active button state
+      const buttons = document.querySelectorAll('.btn-group button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
